@@ -7,32 +7,30 @@
 
         <div class="control">
             <div class="counter">
-              --  
+              {{count}}  
             </div>
-            <span class="label">COUNTER</span>
+            <span class="label-text">COUNTER</span>
         </div>
 
         <div class="control">
-            <div class="controls-button start-button">
-
-            </div>
-            <span class="label">START</span>
+            <div class="controls-button start-button"></div>
+            <span class="label-text">START</span>
         </div>
 
         <div class="control">
-            <div class="controls-button strict-button">
-
-            </div>
-            <span class="label">STRICT</span>
             <div class="led" [ngClass]="{'led-on': true}" id="mode-led"></div>
+            <div class="controls-button strict-button"></div>
+            <span class="label-text">STRICT</span>
         </div>
 
     </div>
 
     <div class="toggle">
-        <span class="label">OFF</span>
+        <div class = "block toggle-text">
+            <span class="label-text">OFF</span>
+        </div>
     
-        <div class="">
+        <div class="block">
             <label class="switch">
             <input
                 type="checkbox"
@@ -42,8 +40,11 @@
             <span class="slider"></span>
             </label>
         </div>
-    
-        <span class="label">ON</span>
+
+        <div class = "block toggle-text">
+            <span class="label-text">ON</span>
+        </div>
+
     </div>
 
 

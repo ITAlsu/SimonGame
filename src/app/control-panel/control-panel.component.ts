@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ControlPanelComponent implements OnInit {
   @Input() enabled: boolean;
   @Output() toggled = new EventEmitter<boolean>();
+  count: number = 0;
 
   constructor() { }
 
