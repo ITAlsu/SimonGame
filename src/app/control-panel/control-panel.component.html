@@ -1,0 +1,50 @@
+<div class ="circle">
+    <div class="logo">
+        Simon
+    </div>
+
+    <div class="controls">
+
+        <div class="control">
+            <div class="counter">
+              --  
+            </div>
+            <span class="label">COUNTER</span>
+        </div>
+
+        <div class="control">
+            <div class="controls-button start-button">
+
+            </div>
+            <span class="label">START</span>
+        </div>
+
+        <div class="control">
+            <div class="controls-button strict-button">
+
+            </div>
+            <span class="label">STRICT</span>
+            <div class="led" [ngClass]="{'led-on': true}" id="mode-led"></div>
+        </div>
+
+    </div>
+
+    <div class="toggle">
+        <span class="label">OFF</span>
+    
+        <div class="">
+            <label class="switch">
+            <input
+                type="checkbox"
+                #toggle
+                (change)="onToggleChange(toggle.checked)"
+            />
+            <span class="slider"></span>
+            </label>
+        </div>
+    
+        <span class="label">ON</span>
+    </div>
+
+
+</div>

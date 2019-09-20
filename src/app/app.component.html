@@ -1,0 +1,11 @@
+<app-buttons-disc
+  [activeCell]="activeCell"
+  (cellClicked)="onColorClicked($event)"
+></app-buttons-disc>
+
+<app-control-panel
+  [enabled]="toggleChecked"
+  (toggled)="onToggled($event)"
+></app-control-panel>
+
+<router-outlet></router-outlet>
