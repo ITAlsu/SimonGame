@@ -1,55 +1,35 @@
-<!--
-<div class="wrap">
-        <div class="wrap-in">
-          <div class="rw">
-            <div class="t-l inline push green unclickable" id="3"></div>
-            <div class="t-r inline push red but unclickable" id="2"></div>
-          </div>
-          <div class="rw">
-            <div class="b-l inline push yellow unclickable" id="1"></div>
-            <div class="b-r inline push blue but unclickable" id="0"></div>
-          </div>
-        </div>
-        <div class="center">
-          <h1 class="brand">Simon game</h1>
-      
-          <div class="row row-no-gutters general-panel">
-            <div class="col-xs-6 col-md-4">
-              <h1 class="count">{{ score }}</h1>
-              <h3 class="label">COUNT</h3>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <button class="btn btn-success btn-circle">
-                <i class="fa fa-check"></i>
-              </button>
-              <h3 class="label">START</h3>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <button class="btn btn-success btn-circle"
-              (click)="onStrictClick()">
-                <i class="fa fa-check"></i>
-              </button>
-              <h3 class="label">STRICT</h3>
-              <div class="led" [ngClass]="{'led-on': strict}" id="mode-led"></div>
-            </div>
-          </div>
-      
-          <div class="row row-no-gutters toggle">
-            <h3 class="col-xs-6 col-md-4">OFF</h3>
-      
-            <div class="col-xs-6 col-md-4">
-              <label class="switch">
-                <input
-                  type="checkbox"
-                  #toggle
-                  (change)="onToggleChange(toggle.checked)"
-                />
-                <span class="slider"></span>
-              </label>
-            </div>
-      
-            <h3 class="col-xs-6 col-md-4">ON</h3>
-          </div>
-        </div>
-      
-      </div>-->
+<div class="circle" [ngClass]="{ disabled: !enabled }">
+  <div class="mid-circle">
+    <div class="wrapper">
+      <div
+        class="quarter top-left"
+        [ngClass]="{ 'lighten-red': activeCell == 1 }"
+        (click)="onColorClick(1)"
+        id="1"
+      ></div>
+      <div class="line-vertical"></div>
+      <div
+        class="quarter top-right"
+        [ngClass]="{ 'lighten-green': activeCell == 2 }"
+        (click)="onColorClick(2)"
+        id="2"
+      ></div>
+    </div>
+    <div class="line-horizontal"></div>
+    <div class="wrapper">
+      <div
+        class="quarter bottom-left"
+        [ngClass]="{ 'lighten-yellow': activeCell == 4 }"
+        (click)="onColorClick(4)"
+        id="4"
+      ></div>
+      <div class="line-vertical"></div>
+      <div
+        class="quarter bottom-right"
+        [ngClass]="{ 'lighten-blue': activeCell == 3 }"
+        (click)="onColorClick(3)"
+        id="3"
+      ></div>
+    </div>
+  </div>
+</div>

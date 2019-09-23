@@ -1,11 +1,13 @@
-<!--<app-buttons-disc
-  [activeCell]="activeCell"
-  (cellClicked)="onColorClicked($event)"
-></app-buttons-disc>-->
+<app-buttons-disc
+  [activeCell]="currentColorNumber"
+  [enabled]="toggleChecked"
+  (colorClicked)="onColorClicked($event)"
+></app-buttons-disc>
 
 <app-control-panel
-  [enabled]="toggleChecked"
   (toggled)="onToggled($event)"
+  (started)="onStarted($event)"
 ></app-control-panel>
 
+<img src="{{ imgSrc }}" height="100" class="meme meme-hide" />
 <router-outlet></router-outlet>

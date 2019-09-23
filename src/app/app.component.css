@@ -1,0 +1,9 @@
+.meme {
+    position: fixed;
+    bottom: 0;
+    right: 0
+}
+
+.meme-hide {
+    display: none;
+}

@@ -6,8 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./control-panel.component.css']
 })
 export class ControlPanelComponent implements OnInit {
-  @Input() enabled: boolean;
+
   @Output() toggled = new EventEmitter<boolean>();
+  @Output() started = new EventEmitter();
+  enabled: boolean;
+  strictMode: boolean;
   count: number = 0;
 
   constructor() { }
@@ -16,7 +19,19 @@ export class ControlPanelComponent implements OnInit {
   }
 
   onToggleChange(checked: boolean) {
+
+    this.enabled = checked;
+    if (!checked) {
+      this.count = 0;
+      this.strictMode = false;
+    }
+
     this.toggled.emit(checked);
+  }
+
+  onStart() {
+    this.count = 0;
+    this.started.emit();
   }
 
 }

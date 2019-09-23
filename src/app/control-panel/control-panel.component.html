@@ -1,51 +1,57 @@
-<div class ="circle">
-    <div class="logo">
-        Simon
+<div class="circle">
+  <div class="logo controls">
+    Simon
+  </div>
+
+  <div class="controls">
+    <div class="control">
+      <div class="counter">
+        {{ count }}
+      </div>
+      <span class="label-text">COUNTER</span>
     </div>
 
-    <div class="controls">
-
-        <div class="control">
-            <div class="counter">
-              {{count}}  
-            </div>
-            <span class="label-text">COUNTER</span>
-        </div>
-
-        <div class="control">
-            <div class="controls-button start-button"></div>
-            <span class="label-text">START</span>
-        </div>
-
-        <div class="control">
-            <div class="led" [ngClass]="{'led-on': true}" id="mode-led"></div>
-            <div class="controls-button strict-button"></div>
-            <span class="label-text">STRICT</span>
-        </div>
-
+    <div class="control">
+      <div
+        class="controls-button start-button"
+        [ngClass]="{ disabled: !enabled }"
+        (click) = "onStart()"
+      ></div>
+      <span class="label-text">START</span>
     </div>
 
-    <div class="toggle">
-        <div class = "block toggle-text">
-            <span class="label-text">OFF</span>
-        </div>
-    
-        <div class="block">
-            <label class="switch">
-            <input
-                type="checkbox"
-                #toggle
-                (change)="onToggleChange(toggle.checked)"
-            />
-            <span class="slider"></span>
-            </label>
-        </div>
+    <div class="control" [ngClass]="{ enabled: enabled }">
+      <div
+        class="led"
+        [ngClass]="{ 'led-on': strictMode && enabled }"
+        id="mode-led"
+      ></div>
+      <div
+        class="controls-button strict-button"
+        [ngClass]="{ disabled: !enabled }"
+      ></div>
+      <span class="label-text">STRICT</span>
+    </div>
+  </div>
 
-        <div class = "block toggle-text">
-            <span class="label-text">ON</span>
-        </div>
-
+  <div class="toggle">
+    <div class="block toggle-text">
+      <span class="label-text">OFF</span>
     </div>
 
+    <div class="block">
+      <label class="switch">
+        <input
+          type="checkbox"
+          #toggle
+          (change)="onToggleChange(toggle.checked)"
+        />
+        <span class="slider"></span>
+      </label>
+    </div>
 
+    <div class="block toggle-text">
+      <span class="label-text">ON</span>
+    </div>
+  </div>
 </div>
